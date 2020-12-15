@@ -1,3 +1,34 @@
+const videoElem = document.getElementById("video");
+const startElem = document.getElementById("start");
+const stopElem = document.getElementById("stop");
+
+// Options for getDisplayMedia()
+
+var displayMediaOptions = {
+  video: {
+    cursor: "always"
+  },
+  audio: false
+};
+
+// Set event listeners for the start and stop buttons
+startElem.addEventListener("click", function(evt) {
+  startCapture();
+}, false);
+
+stopElem.addEventListener("click", function(evt) {
+  stopCapture();
+}, false);
+const gdmOptions = {
+  video: {
+    cursor: "always"
+  },
+  audio: {
+    echoCancellation: true,
+    noiseSuppression: true,
+    sampleRate: 44100
+  }
+}
 async function startCapture(displayMediaOptions) {
   let captureStream = null;
 
@@ -61,8 +92,10 @@ function sendMessage(message) {
     });
    }
    let pc;
+
+// share screen (let's hope this works...)
 function screenShare(){
-  startCapture()
+  startCapture(gdmOptions)
     var screenShareHandler = document.getElementById("screen-share")
     sendMessage(screenShareHandler);
 }
