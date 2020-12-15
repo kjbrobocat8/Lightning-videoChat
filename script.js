@@ -1,3 +1,13 @@
+async function startCapture(displayMediaOptions) {
+  let captureStream = null;
+
+  try {
+    captureStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+  } catch(err) {
+    console.error("Error: " + err);
+  }
+  return captureStream;
+}
 // Generate random room name if needed
 if (!location.hash) {
     location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
@@ -51,6 +61,11 @@ function sendMessage(message) {
     });
    }
    let pc;
+function screenShare(){
+  startCapture()
+    var screenShareHandler = document.getElementById("screen-share")
+    sendMessage(screenShareHandler);
+}
 function startWebRTC(isOfferer) {
  pc = new RTCPeerConnection(configuration);
  
@@ -117,4 +132,3 @@ function startListentingToSignals() {
       onError
     );
    }
-   
