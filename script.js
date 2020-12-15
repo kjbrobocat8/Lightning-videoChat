@@ -11,14 +11,7 @@ var displayMediaOptions = {
   audio: false
 };
 
-// Set event listeners for the start and stop buttons
-startElem.addEventListener("click", function(evt) {
-  startCapture();
-}, false);
 
-stopElem.addEventListener("click", function(evt) {
-  stopCapture();
-}, false);
 const gdmOptions = {
   video: {
     cursor: "always"
