@@ -1,37 +1,3 @@
-const videoElem = document.getElementById("video");
-const startElem = document.getElementById("start");
-const stopElem = document.getElementById("stop");
-
-// Options for getDisplayMedia()
-
-var displayMediaOptions = {
-  video: {
-    cursor: "always"
-  },
-  audio: false
-};
-
-
-const gdmOptions = {
-  video: {
-    cursor: "always"
-  },
-  audio: {
-    echoCancellation: true,
-    noiseSuppression: true,
-    sampleRate: 44100
-  }
-}
-async function startCapture(displayMediaOptions) {
-  let captureStream = null;
-
-  try {
-    captureStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-  } catch(err) {
-    console.error("Error: " + err);
-  }
-  return captureStream;
-}
 // Generate random room name if needed
 if (!location.hash) {
     location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
@@ -85,13 +51,6 @@ function sendMessage(message) {
     });
    }
    let pc;
-
-// share screen (let's hope this works...)
-function screenShare(){
-  startCapture(gdmOptions)
-    var screenShareHandler = document.getElementById("screen-share")
-    sendMessage(screenShareHandler);
-}
 function startWebRTC(isOfferer) {
  pc = new RTCPeerConnection(configuration);
  
