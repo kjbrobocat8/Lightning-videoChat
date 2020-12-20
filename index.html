@@ -14,8 +14,6 @@ var encrypted_channel_id='p7XE2zHkCzK9Zrf2c_wc2vihc6RjlbBpNgQlop4pd5M';
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!-- ScaleDrone -->
     <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
-    Welcome to ⚡Lightning Video Chat
-    <!-- Noto Sans font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <title>⚡Lightning Video Chat</title>
@@ -54,7 +52,7 @@ var encrypted_channel_id='p7XE2zHkCzK9Zrf2c_wc2vihc6RjlbBpNgQlop4pd5M';
     </style>
   </head>
   <body>
-    <div class="copy">Send your URL to a friend to start a video call.</div>
+    <div class="copy">Send your URL to a friend to start a video call. <button onclick="copyURL()"></button></div>
     <video id="localVideo" autoplay muted title="Your video"></video>
     <button onclick="document.getElementById('remoteVideo').requestFullscreen()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       <i class="material-icons">fullscreen</i></button>
