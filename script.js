@@ -1,13 +1,3 @@
-async function startCapture(displayMediaOptions) {
-  let captureStream = null;
-
-  try {
-    captureStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
-  } catch(err) {
-    console.error("Error: " + err);
-  }
-  return captureStream;
-}
 // Generate random room name if needed
 if (!location.hash) {
     location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
@@ -18,8 +8,12 @@ if (!location.hash) {
       urls: 'stun:stun.l.google.com:19302' // Google's public STUN server
     }]
    };
-   function onSuccess() {
-
+function onSuccess() {
+  function copyURL(){
+  var url = "https://kjbrobocat8.github.io/Lightning-videoChat/" + roomHash;
+    url.select()
+    document.execCommand("copy")
+  }
    };
    
    function onError(error) {
