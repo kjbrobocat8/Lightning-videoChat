@@ -49,20 +49,21 @@ var encrypted_channel_id='p7XE2zHkCzK9Zrf2c_wc2vihc6RjlbBpNgQlop4pd5M';
         font-size: 16px;
         color: rgba(0, 0, 0, 0.5);
       }
-      body {
-        padding: 25px;
-        background-color: white;
-        color: black;
-        font-size: 25px;
-      }
       .dark-mode {
         background-color: black;
         color: white;
       }
+      .button-dark {
+        color:white;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .copy-dark {
+        color:white;
+      }
     </style>
   </head>
   <body>
-    <div class="copy">Send your URL to a friend to start a video call. <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="darkMode()"><i class="material-icons">insights</i>Dark Mode</a></div>
+    <div class="copy">Send your URL to a friend to start a video call. <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="darkMode()" id="darkMode"><i class="material-icons">insights</i>Dark Mode</a></div>
     <video id="localVideo" autoplay muted title="Your video"></video>
     <button onclick="document.getElementById('remoteVideo').requestFullscreen()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
       <i class="material-icons">fullscreen</i></button>
@@ -72,9 +73,13 @@ var encrypted_channel_id='p7XE2zHkCzK9Zrf2c_wc2vihc6RjlbBpNgQlop4pd5M';
     <i class="material-icons">smstext</i></a>
 <script>
     function darkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-}
+      var element = document.body;
+      var button = document.getElementById('darkMode')
+      var copy = document.getElementById('copy')
+      element.classList.toggle("dark-mode");
+      button.classList.toggle("button-dark");
+      button.classList.toggle("copy-dark");
+    }
     </script>
   </body>
 </html>
