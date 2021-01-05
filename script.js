@@ -1,3 +1,6 @@
+// ask before leaving
+window.onbeforeunload = s => "";
+
 //Leave meeting function
 function leave() {
   var yesNo = confirm("Are you sure you want to leave this meeting?")
