@@ -2,7 +2,7 @@
 function leave() {
   var yesNo = confirm("Are you sure you want to leave this meeting?")
   if(yesNo != null){
-    location.href = "thanks.html"
+    location.href = "https://codeprojects.org/Btgdn5aftXwB-CFWENQNekq3vViMhC7_J6PFUlqznBI"
   }
 }
 
