@@ -1,13 +1,6 @@
 // ask before leaving
 window.onbeforeunload = s => "";
 
-//Leave meeting function
-function leave() {
-  var yesNo = confirm("Are you sure you want to leave this meeting?")
-  if(yesNo != null){
-    location.href = "https://codeprojects.org/Btgdn5aftXwB-CFWENQNekq3vViMhC7_J6PFUlqznBI"
-  }
-}
 
 
 //  Generate room name 
